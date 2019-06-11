@@ -24,4 +24,10 @@ function showTime() {
   setTimeout(showTime, 1000);
 }
 
+// Add zero
+function addZero(n) {
+  return (parseInt(n, 10) < 10 ? "0" : "") + n;
+}
+
 //Run
+showTime();
