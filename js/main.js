@@ -28,8 +28,19 @@ function showTime() {
 
 // Add zero
 function addZero(n) {
-  return (parseInt(n, 10) < 10 ? "0" : "") + n;
+  return (n < 10 ? "0" : "") + n;
+  // return (parseInt(n, 10) < 10 ? "0" : "") + n;
 }
 
+//Set background and greeting
+function setBgAndGreet(hour) {
+  if (hour < 12) {
+    //morning
+  } else if (hour < 18) {
+    //afternoon
+  } else {
+    //evening
+  }
+}
 //Run
 showTime();
