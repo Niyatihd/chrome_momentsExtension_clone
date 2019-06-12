@@ -33,14 +33,25 @@ function addZero(n) {
 }
 
 //Set background and greeting
-function setBgAndGreet(hour) {
+function setBgAndGreet() {
+  const today = new Date(),
+    hour = today.getHours();
+
   if (hour < 12) {
     //morning
+    greeting.textContent = "Good Morning";
   } else if (hour < 18) {
+    document.body.style.backgroundColor = "grey";
+    document.body.style.color = "black";
+    greeting.textContent = "Good Afternoon";
     //afternoon
   } else {
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
+    greeting.textContent = "Good Evening";
     //evening
   }
 }
 //Run
 showTime();
+setBgAndGreet();
