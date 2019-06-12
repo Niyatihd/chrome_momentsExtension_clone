@@ -52,6 +52,15 @@ function setBgAndGreet() {
     //evening
   }
 }
+
+function getName() {
+  if (localStorage.getItem("name") === null) {
+    name.textContent = "[Enter Your Name Here]";
+  } else {
+    name.textContent = localStorage.getItem("name");
+  }
+}
+
 //Run
 showTime();
 setBgAndGreet();
