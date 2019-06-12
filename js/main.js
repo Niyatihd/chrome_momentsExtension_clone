@@ -65,12 +65,17 @@ function getName() {
 //Get Focus
 function getFocus() {
   if (localStorage.getItem("focus") === null) {
-    name.textContent = "[Enter Today's Focus Here]";
+    focus.textContent = "[Enter Today's Focus Here]";
   } else {
-    name.textContent = localStorage.getItem("focus");
+    focus.textContent = localStorage.getItem("focus");
   }
 }
+
+name.addEventListener("keyPress", setName);
+name.addEventListener("blur", setName);
 
 //Run
 showTime();
 setBgAndGreet();
+getFocus();
+getName();
