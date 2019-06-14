@@ -3,7 +3,9 @@
 const time = document.getElementById("time"),
   greeting = document.getElementById("greeting"),
   name = document.getElementById("name"),
-  focus = document.getElementById("focus");
+  focus = document.getElementById("focus"),
+  checkBox = document.getElementById("checkBox");
+let showAmPM = false;
 
 // Show Time
 function showTime() {
@@ -21,7 +23,7 @@ function showTime() {
   //Output time
   time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(
     sec
-  )} ${amPm}`;
+  )} ${showAmPM ? amPm : ""}`;
 
   setTimeout(showTime, 1000);
 }
@@ -95,10 +97,15 @@ function setFocus(e) {
   }
 }
 
+function setAmPm(e) {
+  showAmPM = e.target.checked ? true : false;
+}
+
 name.addEventListener("keypress", setName);
 name.addEventListener("blur", setName);
 focus.addEventListener("keypress", setFocus);
 focus.addEventListener("blur", setFocus);
+checkBox.addEventListener("change", setAmPm);
 
 //Run
 showTime();
