@@ -65,8 +65,9 @@ function getName() {
 //Set Name
 function setName(e) {
   if (e.type === "keypress") {
-    if (e.keyCode === 13) {
+    if (e.which == 13 || e.keyCode == 13) {
       localStorage.setItem("name", e.target.innerText);
+      name.blur();
     }
   } else {
     localStorage.setItem("name", e.target.innerText);
@@ -82,7 +83,7 @@ function getFocus() {
   }
 }
 
-name.addEventListener("keyPress", setName);
+name.addEventListener("keypress", setName);
 name.addEventListener("blur", setName);
 
 //Run
