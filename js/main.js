@@ -62,6 +62,17 @@ function getName() {
   }
 }
 
+//Set Name
+function setName(e) {
+  if (e.type === "keypress") {
+    if (e.keyCode === 13) {
+      localStorage.setItem("name", e.target.innerText);
+    }
+  } else {
+    localStorage.setItem("name", e.target.innerText);
+  }
+}
+
 //Get Focus
 function getFocus() {
   if (localStorage.getItem("focus") === null) {
