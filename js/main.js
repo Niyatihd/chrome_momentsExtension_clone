@@ -83,8 +83,22 @@ function getFocus() {
   }
 }
 
+//Set Focus
+function setFocus(e) {
+  if (e.type === "keypress") {
+    if (e.which == 13 || e.keyCode == 13) {
+      // localStorage.setItem("name", e.target.innerText);
+      focus.blur();
+    }
+  } else {
+    localStorage.setItem("focus", e.target.innerText);
+  }
+}
+
 name.addEventListener("keypress", setName);
 name.addEventListener("blur", setName);
+focus.addEventListener("keypress", setFocus);
+focus.addEventListener("blur", setFocus);
 
 //Run
 showTime();
